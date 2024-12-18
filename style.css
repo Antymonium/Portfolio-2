@@ -1,0 +1,683 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --cor-primaria: #464646;
+    --cor-secundaria: #f6f6f6;
+    --cor-terciaria: #EAF2FD; 
+    --cor-hover: #272727;
+    --fonte-principal: 'Raleway', sans-serif;
+    --fonte-secundaria: "Montserrat", sans-serif;
+}
+
+/* Reset básico */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--cor-primaria);
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-secundaria);
+}
+
+section {
+    scroll-margin-top: 60px;
+}
+
+#topo {
+    scroll-margin-top: 60px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ====================
+   Header
+==================== */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 2em;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+}
+
+.nome {
+    font-family: var(--fonte-principal);
+    color: var(--cor-primaria);
+    font-size: 1em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 0.5em 1em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: var(--cor-hover);
+    border-radius: 4px;
+    color: var(--cor-secundaria);
+}
+
+
+/* ====================
+   Seção Apresentação
+==================== */
+
+#apresentacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-top: 80px;
+    background-color: var(--cor-secundaria);
+    gap: 20px;
+    margin-left: 10em;
+    margin-right: 10em;
+}
+
+.perfil-imagem {
+    flex-shrink: 0; 
+    margin-left: 20px; 
+}
+
+.perfil-imagem img {
+    width: 100%;
+    max-width: 15em;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.conteudo-apresentacao {
+    display: flex;
+    flex: 1;
+    padding: 0.625em;
+    flex-direction: column;
+    justify-content: space-between;
+    gap:1.5em;
+    
+}
+
+.conteudo-apresentacao-h2 {
+    font-size: 3em;
+}
+
+.conteudo-apresentacao-p {
+    font-size: 1.25em;
+}
+
+
+.redes-sociais {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin-left:0.625em;
+    gap: 0.5em;
+}
+
+.redes-sociais img {
+    width: 1.25em;
+    height: 1.25em;
+    cursor: pointer;
+}
+
+
+/* ====================
+   Seção Sobre Mim
+==================== */
+
+#sobre-mim {
+    background-color: #EAF2FD;
+    color: #464646;
+    padding: 2em ;
+    padding-left: 12em;
+    text-align: left;
+}
+
+#sobre-mim h2 {
+    font-size: 2em; 
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #464646;
+    text-align: left; 
+}
+
+.sobre-mim-conteudo {
+    font-size: 1em; 
+    font-weight: 400;
+    line-height: 1.8;
+    max-width: 700px;
+    text-align: left;
+    color: #464646;
+}
+
+
+/* Botão do Currículo */
+.botao-curriculo {
+    display: inline-block;
+    position: fixed;
+    right: 1em;
+    top: 64,7%;   
+    padding: 0.5em 1em;
+    background-color:#d1e4ff;
+    color: var(--cor-primaria);
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.botao-curriculo.bolinha {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    background-color: #d1e4ff;
+    right: 1em;
+    top: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+    color: transparent;
+}
+
+.botao-curriculo.bolinha::before {
+    font-size: 2em;
+    color: var(--cor-secundaria);
+
+}
+
+
+.botao-curriculo:hover {
+    background-color: var(--cor-hover);
+    transform: scale(1.05);
+    background-color: #173F6D;
+    color:#f6f6f6;
+}
+
+#texto-curriculo {
+    transition: opacity 0s ease;
+}
+
+#texto-curriculo.oculto {
+    opacity: 0;
+}
+
+
+/* Botão Topo  */
+
+#btn-topo {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    width: 40px;
+    height: 38px;
+    background-color: rgba(182, 182, 182, 0.5);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 1em;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+#btn-topo:hover {
+    background-color: rgba(90, 90, 90, 0.8);
+    transform: scale(1.1);
+}
+
+
+
+
+/* ====================
+   Links e Tipografia
+==================== */
+a {
+    text-decoration: none;
+    color: var(--cor-primaria);
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    color: var(--cor-primaria);
+}
+
+/* ====================
+   Demais Seções
+==================== */
+section {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+
+/* ====================
+    Hobbies e Soft Skills
+==================== */
+
+#hobbies-skills {
+    text-align: center;
+    padding: 4em 2em;
+    background-color: var(--cor-secundaria);
+}
+
+#hobbies-skills h2 {
+    font-size: 2em;
+    color: var(--cor-primaria);
+    margin-bottom: 1.5em;
+}
+
+.hobbies-conteudo {
+    display: flex; 
+    justify-content: center; 
+    gap: 2em; 
+    flex-wrap: wrap;
+}
+
+.hobby-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5em;
+    max-width: 150px;
+}
+
+.hobby-item img {
+    width: 100%;
+    max-width: 100px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hobby-item p {
+    font-size: 1em;
+    color: var(--cor-primaria);
+    font-weight: bold;
+}
+
+
+/* ====================
+  Formação
+==================== */
+
+#formacao {
+    font-size: 1em;
+    color: var(--cor-primaria);
+    text-align: center;
+    background-color: #EAF2FD;
+    padding: 4em 2em;
+}
+
+#formacao h2 {
+    font-size: 2em;
+    color: var(--cor-primaria);
+    margin-bottom: 1.5em; 
+}
+
+.formacao-conteudo {
+    display: flex; 
+    justify-content: center; 
+    gap: 1.5em;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.formacao-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 1em;
+    gap: 1em;
+}
+
+.formacao-item img {
+    width: 100%;
+    max-width: 10em; 
+    height: auto; 
+    object-fit: contain;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.formacao-item p {
+    font-size: 1em;
+    color: var(--cor-primaria);
+    font-weight: bold;
+    text-align: center;
+}
+
+.formacao-item p:last-of-type {
+    font-size: 0.9em;
+    font-weight: normal;
+    color: var(--cor-primaria);
+}
+
+/* ====================
+  Cursos
+==================== */
+#cursos {
+    font-size: 1em;
+    color: var(--cor-primaria);
+    text-align: center;
+}
+
+#cursos h2 {
+    font-size: 2em;
+    color: var(--cor-primaria);
+    margin-bottom: 0.5em;
+    font-family: var(--fonte-primaria);
+}
+
+.cursos-conteudo {
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+    flex-wrap: wrap;
+    padding: 2em;
+    align-items: flex-start;
+}
+
+.cursos-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5em;
+    max-width: 20em;
+    text-align: center;
+}
+
+.cursos-item img {
+    width: 100%;
+    max-width: 8em;
+    height: 8em;
+    object-fit: contain;
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 0.5em;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.cursos-item p {
+    font-size: 1em;
+    color: var(--cor-primaria);
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.cursos-item p:last-of-type {
+    font-size: 0.9em;
+    font-weight: normal;
+    color: var(--cor-primaria);
+}
+
+
+/* ====================
+   Experiência em Programação
+==================== */
+#experiencia-programacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2em 1em;
+    text-align: center;
+    gap: 3em;
+    background-color: var(--cor-terciaria); 
+}
+
+#experiencia-programacao h2 {
+    font-size: 2em;
+    color: var(--cor-primaria);
+    margin-bottom: 0.5em;
+    font-family: var(--fonte-principal);
+}
+
+.projeto-decodificador {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.projeto-decodificador img {
+    width: 70%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.projeto-decodificador .projeto-textos {
+    text-align: center;
+}
+
+.projeto,.projeto-decodificador  {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 20px;
+    width: 100%;
+    max-width: 800px; 
+    margin: 0 auto;
+}
+
+.projeto img {
+    width: 60%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.projeto-textos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.projeto-botoes {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.projeto-botoes button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: var(--cor-primaria);
+    background-color: #d1e4ff;
+    border: 1px solid #d8e9ff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.projeto-botoes button:hover {
+    background-color: #173F6D;
+    color:#f6f6f6;
+}
+
+.projeto-decodificador {
+    flex-direction: row-reverse;
+}
+
+/* ====================
+   Área de Contato
+==================== */
+#contato {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    background-color: var(--cor-secundaria);
+}
+
+#contato form {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#contato h2 {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    color: var(--cor-primaria);
+}
+
+/* Estilo para campos com erro */
+.erro-input {
+    border: 2px solid red; /* Borda vermelha */
+    background-color: #ffe6e6; /* Fundo avermelhado */
+    transition: border 0.3s ease, background-color 0.3s ease;
+}
+
+/* Estilo para mensagens de erro */
+.mensagem-erro {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+
+#recomecar {
+    margin-top: 10px;
+    padding: 0.5em 1em;
+    background-color: #d3d3d3; /* Cinza claro */
+    color: #000; /* Preto */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#recomecar:hover {
+    background-color: #b0b0b0; /* Cinza mais escuro no hover */
+}
+
+
+/* Elementos do Formulário */
+form label {
+    display: block;
+    margin: 1em 0 0.5em;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: var(--cor-terciaria);
+    box-shadow: 0px 0px 5px rgba(34, 212, 253, 0.5);
+}
+
+form button {
+    margin-top: 1em;
+    padding: 0.5em 1em;
+    width: 100%;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: var(--cor-hover);
+}
+
+button:disabled {
+    background-color: #d3d3d3;
+    color: #a0a0a0;
+    cursor: none; 
+    opacity: 0.6; 
+}
+
+
+/* ====================
+   Rodapé
+==================== */
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    font-size: 0.9em;
+    border-radius: 8px 8px 0 0;
+    margin-top: 20px;
+}
+
+
+
+/* ====================
+    Ressponsividade
+==================== */
+
+.menu-hamburger {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: var(--cor-secundaria);
+        z-index: 10;
+    }
+
+    .menu-hamburger {
+        display: block;
+        font-size: 1.5em;
+        cursor: pointer;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+}
